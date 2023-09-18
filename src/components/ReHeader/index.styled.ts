@@ -58,7 +58,7 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.h1`
-  color: #ffff00;
+  color: #ff2222;
   font-family: "Helvetica", "Arial", sans-serif; // Helvetica with fallbacks
   text-transform: uppercase;
   width: max-content;

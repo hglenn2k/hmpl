@@ -8,8 +8,9 @@ import { GuessType } from "./types/guess";
 
 import { todaysSolution } from "./helpers";
 
-import { Header, InfoPopUp, Footer } from "./components";
+import { InfoPopUp, Footer } from "./components";
 import { Redactle } from "./components/Redactle";
+import { ReHeader } from "./components/ReHeader";
 
 import * as Styled from "./app.styled";
 
@@ -144,7 +145,7 @@ function RedactleApp() {
 
   return (
     <main>
-      <Header openInfoPopUp={openInfoPopUp} />
+      <ReHeader openInfoPopUp={openInfoPopUp} />
       {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
       <Styled.Container>
         <p>did this work</p>
