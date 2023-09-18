@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IoMusicalNoteOutline, IoHelpCircleOutline } from "react-icons/io5";
 
 export const Container = styled.div`
   position: absolute;
@@ -15,7 +16,19 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.75);
 `;
 
+export const VideoBackground = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; // Ensure the video is below the content
+  border-radius: 10px;
+`;
+
 export const PopUp = styled.div`
+  position: relative; // to position the video inside it
   width: 90%;
   max-width: 500px;
   @media (max-width: 768px) {
@@ -23,7 +36,7 @@ export const PopUp = styled.div`
   }
   padding: 20px;
 
-  background-color: ${({ theme }) => theme.background100};
+  background-color: rgba(0, 0, 0, 0.4);
 
   border-radius: 10px;
 
@@ -34,6 +47,7 @@ export const PopUp = styled.div`
 
   h1 {
     margin-bottom: 0;
+    color: ${({ theme }) => theme.yellow};
   }
 `;
 
@@ -62,9 +76,17 @@ export const Contact = styled.p`
   a {
     color: ${({ theme }) => theme.text};
   }
+  color: ${({ theme }) => theme.yellow};
   margin-top: 5%;
 
   font-size: 0.9rem;
   font-weight: bold;
-  opacity: 0.5;
+`;
+
+export const StyledMusicalNoteIcon = styled(IoMusicalNoteOutline)`
+  color: ${({ theme }) => theme.yellow};
+`;
+
+export const StyledHelpCircleIcon = styled(IoHelpCircleOutline)`
+  color: ${({ theme }) => theme.yellow};
 `;

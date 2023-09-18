@@ -90,7 +90,7 @@ export function Player({ id, currentTry }: Props) {
           />
         </>
       ) : (
-        <p>Ładowanie odtwarzacza...</p>
+        <p>Loading player...</p>
       )}
     </>
   );

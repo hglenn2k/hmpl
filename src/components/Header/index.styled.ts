@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
+  position: relative; // Add this to position the video
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; // Ensure the video sits behind your header content
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +27,13 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); // This is an example with a white semi-transparent background
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -39,10 +58,11 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.h1`
-  color: ${({ theme }) => theme.text};
-  font-family: "Roboto Serif", serif;
+  color: #ffff00;
+  font-family: "Helvetica", "Arial", sans-serif; // Helvetica with fallbacks
   text-transform: uppercase;
   width: max-content;
+  letter-spacing: 7.5px; // Triple the space between characters
 
   -webkit-touch-callout: none;
   user-select: none;

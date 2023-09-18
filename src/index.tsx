@@ -1,20 +1,32 @@
 import { initialize } from "react-ga";
-
-const TRACKING_ID = "INSERT-YOUR-ID-HERE";
-initialize(TRACKING_ID);
-
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./constants";
 import "./index.css";
 import App from "./app";
+import RedactleApp from "./redactleapp";
+
+const TRACKING_ID = "INSERT-YOUR-ID-HERE";
+initialize(TRACKING_ID);
+
+function Root() {
+  return (
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="/59" element={<RedactleApp />} />
+          <Route path="/" element={<App />} />
+        </Routes>
+      </ThemeProvider>
+    </Router>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Root />
   </React.StrictMode>,
   document.getElementById("root")
 );

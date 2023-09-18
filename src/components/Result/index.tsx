@@ -4,7 +4,7 @@ import { Song } from "../../types/song";
 import { GuessType } from "../../types/guess";
 import { scoreToEmoji } from "../../helpers";
 
-import { Button } from "../Button";
+import { Button } from "..";
 import { YouTube } from "../YouTube";
 
 import * as Styled from "./index.styled";
@@ -30,48 +30,57 @@ export function Result({
       60
   );
 
-  const textForTry = ["Wow!", "Świetnie", "Nieźle", "Super", "Dobrze"];
+  const textForTry = [
+    "Wow!",
+    "Im impressed.",
+    "Not bad.",
+    "Phew.",
+    "That was close...",
+  ];
 
   if (didGuess) {
     const copyResult = React.useCallback(() => {
       navigator.clipboard.writeText(scoreToEmoji(guesses));
     }, [guesses]);
 
-    const triesConjugation = currentTry === 1 ? "próbie" : "próbach";
+    const triesConjugation = currentTry === 1 ? "guess" : "guesses";
 
     return (
       <>
         <Styled.ResultTitle>{textForTry[currentTry - 1]}</Styled.ResultTitle>
         <Styled.SongTitle>
-          Dzisiejsza piosenka, to {todaysSolution.artist} -{" "}
-          {todaysSolution.name}
+          <p>Today&apos;s song is &apos;{todaysSolution.name}&apos;.</p>
         </Styled.SongTitle>
         <Styled.Tries>
-          Udało Ci się zgadnąć w {currentTry} {triesConjugation}
+          You got it right in {currentTry} {triesConjugation}.
         </Styled.Tries>
         <YouTube id={todaysSolution.youtubeId} />
-        <Button onClick={copyResult} variant="green">
-          Skopiuj wynik
-        </Button>
         <Styled.TimeToNext>
-          Pamiętaj, by wrócić jutro - następny Słuchaj.fun za: {hoursToNextDay}{" "}
-          godzin!
+          Try again tomorrow - new song in {hoursToNextDay} hours!
         </Styled.TimeToNext>
+        <Button onClick={() => (window.location.href = "/59")}>
+          While You Wait...
+        </Button>
       </>
     );
   } else {
     return (
       <>
-        <Styled.ResultTitle>Niestety, nie udało się...</Styled.ResultTitle>
+        <Styled.ResultTitle>You got stung 🐝</Styled.ResultTitle>
         <Styled.SongTitle>
-          Dzisiejsza piosenka, to {todaysSolution.artist} -{" "}
-          {todaysSolution.name}
+          <p>Today&apos;s song is &apos;{todaysSolution.name}&apos;.</p>
         </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.TimeToNext>
-          Spróbuj ponownie jutro - następny Słuchaj.fun za: {hoursToNextDay}{" "}
-          godzin!
+          Try again tomorrow - new song in {hoursToNextDay} hours!
         </Styled.TimeToNext>
+        <Button
+          variant="pink"
+          style={{ color: "#ffff00", marginTop: 20 }}
+          onClick={() => (window.location.href = "/59")}
+        >
+          While You Wait...
+        </Button>
       </>
     );
   }
