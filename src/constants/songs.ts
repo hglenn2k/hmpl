@@ -47,7 +47,7 @@ export const songs = [
   {
     artist: "Beyoncé",
     name: "PURE/HONEY",
-    youtubeId: "WM133A3vqLE",
+    youtubeId: "tBcAjlUqU0U",
   },
   {
     artist: "Beyoncé",
