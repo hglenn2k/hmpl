@@ -3,17 +3,22 @@ import { event } from "react-ga";
 import React from "react";
 import _ from "lodash";
 
-import { Song } from "./types/song";
+import { Verse, RedactleSong } from "./types/song";
 import { GuessType } from "./types/guess";
 
-import { todaysSolution } from "./helpers";
+import { todaysRedactleSolution } from "./helpers/todaysRedactleSolution";
+import { getVerse } from "./helpers/redactleSolution";
 
 import { Footer } from "./components";
 import { RedactleInfoPopUp } from "./components/RedactleInfoPopUp";
 import { Redactle } from "./components/Redactle";
 import { ReHeader } from "./components/ReHeader";
 
-import * as Styled from "./app.styled";
+import { Search } from "./components/Search";
+
+import { Button } from "./components/Button";
+
+import * as Styled from "./redactleapp.styled";
 
 function RedactleApp() {
   const initialGuess = {
@@ -22,12 +27,13 @@ function RedactleApp() {
     isCorrect: undefined,
   } as GuessType;
 
-  const [guesses, setGuesses] = React.useState<GuessType[]>(
-    Array.from({ length: 5 }).fill(initialGuess) as GuessType[]
-  );
+  const [guesses, setGuesses] = React.useState<GuessType[]>([]);
   const [currentTry, setCurrentTry] = React.useState<number>(0);
-  const [selectedSong, setSelectedSong] = React.useState<Song>();
+  const [selectedSong, setSelectedSong] = React.useState<RedactleSong>();
   const [didGuess, setDidGuess] = React.useState<boolean>(false);
+  const [currentSolution, setCurrentSolution] = React.useState<
+    [Verse, RedactleSong]
+  >(todaysRedactleSolution);
 
   const firstRun = localStorage.getItem("firstRun") === null;
   let stats = JSON.parse(localStorage.getItem("stats") || "{}");
@@ -35,13 +41,13 @@ function RedactleApp() {
   React.useEffect(() => {
     if (Array.isArray(stats)) {
       const visitedToday = _.isEqual(
-        todaysSolution,
+        currentSolution[0].verse,
         stats[stats.length - 1].solution
       );
 
       if (!visitedToday) {
         stats.push({
-          solution: todaysSolution,
+          solution: todaysRedactleSolution,
           currentTry: 0,
           didGuess: 0,
         });
@@ -56,7 +62,7 @@ function RedactleApp() {
       // useEffect below does rest
       stats = [];
       stats.push({
-        solution: todaysSolution,
+        solution: currentSolution,
       });
     }
   }, []);
@@ -91,45 +97,42 @@ function RedactleApp() {
   }, [localStorage.getItem("firstRun")]);
 
   const skip = React.useCallback(() => {
-    setGuesses((guesses: GuessType[]) => {
-      const newGuesses = [...guesses];
-      newGuesses[currentTry] = {
+    setGuesses([
+      ...guesses,
+      {
         song: undefined,
         skipped: true,
         isCorrect: undefined,
-      };
+      },
+    ]);
 
-      return newGuesses;
-    });
-
-    setCurrentTry((currentTry) => currentTry + 1);
+    setCurrentTry((prevTry) => prevTry + 1);
 
     event({
       category: "Game",
       action: "Skip",
     });
-  }, [currentTry]);
+  }, [guesses]);
 
   const guess = React.useCallback(() => {
-    const isCorrect = selectedSong === todaysSolution;
+    const isCorrect = _.isEqual(selectedSong, currentSolution[1]);
 
     if (!selectedSong) {
-      alert("Wybierz piosenkę");
+      alert("You gotta pick a song tbh");
       return;
     }
 
-    setGuesses((guesses: GuessType[]) => {
-      const newGuesses = [...guesses];
-      newGuesses[currentTry] = {
+    setGuesses([
+      ...guesses,
+      {
         song: selectedSong,
         skipped: false,
         isCorrect: isCorrect,
-      };
+      },
+    ]);
 
-      return newGuesses;
-    });
+    setCurrentTry((prevTry) => prevTry + 1);
 
-    setCurrentTry((currentTry) => currentTry + 1);
     setSelectedSong(undefined);
 
     if (isCorrect) {
@@ -144,13 +147,37 @@ function RedactleApp() {
     });
   }, [guesses, selectedSong]);
 
+  /* TODO: Implement after determining what your result component will look like
+
+  // Whenever the game ends, you can pick another random song:
+  React.useEffect(() => {
+    if (didGuess || currentTry === 5) {
+      setCurrentSolution(getVerse());
+      // Also reset other game states, if necessary
+      setGuesses(Array.from({ length: 5 }).fill(initialGuess) as GuessType[]);
+      setCurrentTry(0);
+      // ... and so on ...
+    }
+  }, [didGuess, currentTry]);
+
+  */
+
   return (
     <main>
       <ReHeader openInfoPopUp={openInfoPopUp} />
       {isInfoPopUpOpen && <RedactleInfoPopUp onClose={closeInfoPopUp} />}
       <Styled.Container>
-        <p>did this work</p>
+        <Redactle
+          guesses={guesses}
+          todaysSolution={currentSolution}
+          currentTry={currentTry}
+          didGuess={didGuess}
+          setSelectedSong={setSelectedSong}
+          skip={skip}
+          guess={guess}
+        />
       </Styled.Container>
+      <p>Guess count: {currentTry}</p>
       <Footer />
     </main>
   );

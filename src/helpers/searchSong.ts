@@ -1,20 +1,24 @@
 import { songs } from "../constants";
-import { Song } from "../types/song";
+import { verses } from "../constants/verses";
+import { RedactleSong, Song } from "../types/song";
 
-export function searchSong(searchTerm: string): Song[] {
+export function searchSong(
+  searchTerm: string,
+  source: "songs" | "verses" = "songs"
+): (Song | RedactleSong)[] {
   searchTerm = searchTerm.toLowerCase();
 
-  return songs
-    .filter((song: Song) => {
-      const songName = song.name.toLowerCase();
-      const songArtist = song.artist.toLowerCase();
+  const database = source === "songs" ? songs : verses;
 
-      if (songArtist.includes(searchTerm) || songName.includes(searchTerm)) {
-        return song;
-      }
+  return database
+    .filter((entry: Song | RedactleSong) => {
+      const name = entry.name.toLowerCase();
+      const artist = entry.artist.toLowerCase();
+
+      return artist.includes(searchTerm) || name.includes(searchTerm);
     })
     .sort((a, b) =>
-      a.artist.toLowerCase().localeCompare(b.artist.toLocaleLowerCase())
+      a.artist.toLowerCase().localeCompare(b.artist.toLowerCase())
     )
     .slice(0, 5);
 }

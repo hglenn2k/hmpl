@@ -1,7 +1,7 @@
 import React from "react";
 
 import { GuessType } from "../../types/guess";
-import { Song } from "../../types/song";
+import { Verse, RedactleSong } from "../../types/song";
 
 import { Button, Guess, Result, Search } from "..";
 
@@ -9,10 +9,12 @@ import * as Styled from "./index.styled";
 
 interface Props {
   guesses: GuessType[];
-  todaysSolution: Song;
+  todaysSolution: [Verse, RedactleSong];
   currentTry: number;
   didGuess: boolean;
-  setSelectedSong: React.Dispatch<React.SetStateAction<Song | undefined>>;
+  setSelectedSong: React.Dispatch<
+    React.SetStateAction<RedactleSong | undefined>
+  >;
   skip: () => void;
   guess: () => void;
 }
@@ -27,12 +29,11 @@ export function Redactle({
   guess,
 }: Props) {
   if (didGuess || currentTry === 5) {
-    // Change the 6 to 5
     return (
       <Result
         didGuess={didGuess}
         currentTry={currentTry}
-        todaysSolution={todaysSolution}
+        todaysSolution={todaysSolution[1]}
         guesses={guesses}
       />
     );
@@ -41,24 +42,25 @@ export function Redactle({
   return (
     <>
       <Styled.LyricsPlaceholder>
-        {/* This will be a component or div where you'll display the redacted lyrics for the user */}
+        {todaysSolution[0]?.verse &&
+          todaysSolution[0].verse.split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
       </Styled.LyricsPlaceholder>
 
-      {guesses.map((guess: GuessType, index) => (
-        <Guess
-          key={index}
-          guess={guess}
-          isCorrect={guess.isCorrect}
-          active={index === currentTry}
-        />
-      ))}
-
-      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} />
+      <Search<RedactleSong>
+        currentTry={currentTry}
+        setSelectedSong={setSelectedSong}
+        source="verses"
+      />
 
       <Styled.Buttons>
-        <Button onClick={skip}>Skip Guess</Button>
+        <Button onClick={skip}>Guess Lyrics</Button>
         <Button variant="green" onClick={guess}>
-          Guess
+          Guess Song
         </Button>
       </Styled.Buttons>
     </>

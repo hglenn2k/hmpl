@@ -24,7 +24,7 @@ export function ReHeader({ openInfoPopUp }: Props) {
           size={30}
           width={30}
           height={30}
-          color={theme.red}
+          color={"#8b0000"}
         />
 
         <Styled.Logo>$uicideRedact£e</Styled.Logo>

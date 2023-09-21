@@ -36,7 +36,7 @@ export const PopUp = styled.div`
   }
   padding: 20px;
 
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(25, 0, 0, 0.65);
 
   border-radius: 10px;
 

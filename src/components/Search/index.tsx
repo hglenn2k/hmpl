@@ -2,26 +2,35 @@ import React from "react";
 import { event } from "react-ga";
 import { IoSearch } from "react-icons/io5";
 import { searchSong } from "../../helpers";
-import { Song } from "../../types/song";
-
 import * as Styled from "./index.styled";
 
-interface Props {
-  currentTry: number;
-  setSelectedSong: React.Dispatch<React.SetStateAction<Song | undefined>>;
+interface BasicSongProperties {
+  youtubeId: string;
+  artist: string;
+  name: string;
 }
 
-export function Search({ currentTry, setSelectedSong }: Props) {
+interface Props<T extends BasicSongProperties> {
+  currentTry: number;
+  setSelectedSong: React.Dispatch<React.SetStateAction<T | undefined>>;
+  source?: "songs" | "verses";
+}
+
+export function Search<T extends BasicSongProperties>({
+  currentTry,
+  setSelectedSong,
+  source = "songs",
+}: Props<T>) {
   const [value, setValue] = React.useState<string>("");
-  const [results, setResults] = React.useState<Song[]>([]);
+  const [results, setResults] = React.useState<T[]>([]);
 
   React.useEffect(() => {
     if (value) {
-      setResults(searchSong(value));
+      setResults(searchSong(value, source) as T[]); // You might need type casting here
     } else if (value === "") {
       setResults([]);
     }
-  }, [value]);
+  }, [value, source]);
 
   // clear value on selection
   React.useEffect(() => {
@@ -57,7 +66,7 @@ export function Search({ currentTry, setSelectedSong }: Props) {
           <IoSearch size={20} />
           <Styled.Input
             onChange={(e) => setValue(e.currentTarget.value)}
-            placeholder="Search"
+            placeholder="Search Songs"
             value={value}
           />
         </Styled.SearchPadding>

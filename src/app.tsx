@@ -111,7 +111,7 @@ function App() {
     const isCorrect = selectedSong === todaysSolution;
 
     if (!selectedSong) {
-      alert("Wybierz piosenkę");
+      alert("You gotta pick a song tbh");
       return;
     }
 
