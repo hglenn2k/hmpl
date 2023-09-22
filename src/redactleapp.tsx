@@ -137,6 +137,8 @@ function RedactleApp() {
 
     if (isCorrect) {
       setDidGuess(true);
+    } else {
+      alert("That ain't it, chief");
     }
 
     event({
@@ -167,18 +169,18 @@ function RedactleApp() {
       <ReHeader openInfoPopUp={openInfoPopUp} />
       {isInfoPopUpOpen && <RedactleInfoPopUp onClose={closeInfoPopUp} />}
       <Styled.Container>
-        <h2>Daily $uicideboy$ Redactle</h2>
+        <h2>Daily $uicideboy$ Redact£e</h2>
         <Redactle
           guesses={guesses}
           todaysSolution={currentSolution}
           currentTry={currentTry}
           didGuess={didGuess}
+          selectedSong={selectedSong}
           setSelectedSong={setSelectedSong}
           skip={skip}
           guess={guess}
         />
       </Styled.Container>
-      <p>Guess count: {currentTry}</p>
       <Footer />
     </main>
   );

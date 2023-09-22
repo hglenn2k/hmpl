@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { GuessType } from "../../types/guess";
 import { Verse, RedactleSong } from "../../types/song";
 
-import { Button, Guess, Result, Search } from "..";
+import { Button, Guess, Search } from "..";
+import { RedactleResult } from "../RedactleResult";
 
 import { Word } from "../../types/word";
 import { transformToWords, checkGuesses } from "../../helpers/redactSong";
@@ -15,6 +16,7 @@ interface Props {
   todaysSolution: [Verse, RedactleSong];
   currentTry: number;
   didGuess: boolean;
+  selectedSong: RedactleSong | undefined;
   setSelectedSong: React.Dispatch<
     React.SetStateAction<RedactleSong | undefined>
   >;
@@ -27,10 +29,14 @@ export function Redactle({
   todaysSolution,
   currentTry,
   didGuess,
+  selectedSong,
   setSelectedSong,
   skip,
   guess,
 }: Props) {
+  const [lyricChecks, setLyricChecks] = useState<number>(0);
+  const [songGuesses, setSongGuesses] = useState<number>(0);
+
   const wordsArrayInit = todaysSolution[0]?.verse
     ? transformToWords(todaysSolution[0].verse)
     : [];
@@ -58,18 +64,31 @@ export function Redactle({
     }
   }
 
-  function handleCheckGuesses() {
-    const updatedWords = checkGuesses(wordsArray, userGuesses);
-    setWordsArray(updatedWords);
+  function handleLyricCheck() {
+    if (userGuesses.some((guess) => guess.trim() !== "")) {
+      const updatedWords = checkGuesses(wordsArray, userGuesses);
+      setLyricChecks((prevTries) => prevTries + 1);
+      setWordsArray(updatedWords);
+    }
   }
 
-  if (didGuess || currentTry === 5) {
+  function handleSongGuess() {
+    if (selectedSong) {
+      setSongGuesses((prevGuesses) => prevGuesses + 1);
+      guess();
+    } else {
+      alert("You gotta pick a song tbh");
+    }
+  }
+
+  if (didGuess) {
     return (
-      <Result
+      <RedactleResult
         didGuess={didGuess}
         currentTry={currentTry}
         todaysSolution={todaysSolution[1]}
         guesses={guesses}
+        lyricAttempts={lyricChecks}
       />
     );
   }
@@ -117,7 +136,6 @@ export function Redactle({
                   style={{ width: `${word.text.length * 8}px` }}
                 />
               );
-            // Add other cases like "freebie" here when needed
             default:
               return <span key={index}>{word.text}</span>;
           }
@@ -131,9 +149,9 @@ export function Redactle({
       />
 
       <Styled.Buttons>
-        <Button onClick={handleCheckGuesses}>Guess Lyrics</Button>
-        <Button variant="green" onClick={guess}>
-          Guess Song
+        <Button onClick={handleLyricCheck}>Guess Lyrics ({lyricChecks})</Button>
+        <Button variant="green" onClick={handleSongGuess}>
+          Guess Song ({songGuesses}){" "}
         </Button>
       </Styled.Buttons>
     </>
