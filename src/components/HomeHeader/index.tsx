@@ -8,7 +8,7 @@ interface Props {
   openInfoPopUp: () => void;
 }
 
-export function ReHeader({ openInfoPopUp }: Props) {
+export function HomeHeader({ openInfoPopUp }: Props) {
   return (
     <Styled.Container>
       <video
@@ -24,10 +24,10 @@ export function ReHeader({ openInfoPopUp }: Props) {
           size={30}
           width={30}
           height={30}
-          color={"#00fdf9"}
+          color={"#83d350"}
         />
 
-        <Styled.Logo>$uicideRedact£e</Styled.Logo>
+        <Styled.Logo>HMPL.ECO</Styled.Logo>
 
         <a href="#"></a>
       </Styled.Content>

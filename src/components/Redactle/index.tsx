@@ -81,7 +81,10 @@ export function Redactle({
           const nextElement = wordsArray[index + 1];
 
           // Determine if a space should be added after the current element
-          const addSpace = nextElement && !/[.,;?!]/.test(nextElement.text);
+          const addSpace =
+            word.text !== "'s" &&
+            nextElement &&
+            !/[.,;?!'s]/.test(nextElement.text);
 
           switch (word.currentState) {
             case "newLine":

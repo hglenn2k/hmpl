@@ -7,8 +7,7 @@ function redactionAlgorithm(word: string): Word["currentState"] {
 }
 
 export function transformToWords(lyrics: string): Word[] {
-  const regex = /(\n|[\w.]+|\s+|[.,;?!](?!\w))/g;
-
+  const regex = /(\n|[a-zA-Z]+(?='s)|'s|[\w.]+|\s+|[.,;?!](?!\w))/g;
   const matches = lyrics.match(regex) || [];
 
   return matches.map((wordOrDelimiter) => {
@@ -20,6 +19,11 @@ export function transformToWords(lyrics: string): Word[] {
     } else if (/\s+/.test(wordOrDelimiter)) {
       return {
         text: " ",
+        currentState: "notRedacted",
+      };
+    } else if (wordOrDelimiter === "'s") {
+      return {
+        text: "'s",
         currentState: "notRedacted",
       };
     } else if (

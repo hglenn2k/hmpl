@@ -1,13 +1,12 @@
 import styled from "styled-components";
-
 export const Container = styled.div`
-  width: 90%;
+  width: 40%;
 
   @media (max-width: 768px) {
     width: 90%;
   }
 
-  max-width: 700px;
+  max-width: 600px;
 
   display: flex;
   flex-direction: column;
@@ -15,8 +14,10 @@ export const Container = styled.div`
   align-items: center;
 
   margin: 0 auto;
-
-  h2 {
-    color: #00fdf9;
-  }
+`;
+export const Buttons = styled.div`
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;

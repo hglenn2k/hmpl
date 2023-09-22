@@ -38,7 +38,6 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
 
   width: 45%;
 
@@ -46,7 +45,7 @@ export const Content = styled.div`
     width: 95%;
   }
 
-  max-width: 750px;
+  max-width: 650px;
 
   svg:hover {
     cursor: pointer;
@@ -59,7 +58,7 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.h1`
-  color: #00fdf9;
+  color: #83d350;
   font-family: "Helvetica", "Arial", sans-serif; // Helvetica with fallbacks
   text-transform: uppercase;
   width: max-content;

@@ -8,11 +8,14 @@ import { GuessType } from "./types/guess";
 
 import { todaysSolution } from "./helpers";
 
-import { Header, InfoPopUp, Game, Footer } from "./components";
+import { InfoPopUp, Footer } from "./components";
+import { HomeHeader } from "./components/HomeHeader";
 
-import * as Styled from "./app.styled";
+import { Button } from "./components";
 
-function App() {
+import * as Styled from "./homepage.styled";
+
+function Homepage() {
   const initialGuess = {
     song: undefined,
     skipped: false,
@@ -143,23 +146,23 @@ function App() {
 
   return (
     <main>
-      <Header openInfoPopUp={openInfoPopUp} />
+      <HomeHeader openInfoPopUp={openInfoPopUp} />
       {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
       <Styled.Container>
-        <h2>Daily Beyoncé Heardle</h2>
-        <Game
-          guesses={guesses}
-          didGuess={didGuess}
-          todaysSolution={todaysSolution}
-          currentTry={currentTry}
-          setSelectedSong={setSelectedSong}
-          skip={skip}
-          guess={guess}
-        />
+        <br />
+        <br />
+        <Button variant="green" onClick={() => (window.location.href = "/bey")}>
+          Click if you like Beyoncé
+        </Button>
+        <br />
+        <br />
+        <Button variant="red" onClick={() => (window.location.href = "/59")}>
+          Click if you like $uicideboy$
+        </Button>
       </Styled.Container>
       <Footer />
     </main>
   );
 }
 
-export default App;
+export default Homepage;

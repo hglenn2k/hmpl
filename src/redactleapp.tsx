@@ -167,6 +167,7 @@ function RedactleApp() {
       <ReHeader openInfoPopUp={openInfoPopUp} />
       {isInfoPopUpOpen && <RedactleInfoPopUp onClose={closeInfoPopUp} />}
       <Styled.Container>
+        <h2>Daily $uicideboy$ Redactle</h2>
         <Redactle
           guesses={guesses}
           todaysSolution={currentSolution}

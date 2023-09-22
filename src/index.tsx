@@ -7,6 +7,7 @@ import { theme } from "./constants";
 import "./index.css";
 import App from "./app";
 import RedactleApp from "./redactleapp";
+import Homepage from "./homepage";
 
 const TRACKING_ID = "INSERT-YOUR-ID-HERE";
 initialize(TRACKING_ID);
@@ -16,8 +17,9 @@ function Root() {
     <Router>
       <ThemeProvider theme={theme}>
         <Routes>
+          <Route path="/" element={<Homepage />} />
           <Route path="/59" element={<RedactleApp />} />
-          <Route path="/" element={<App />} />
+          <Route path="/bey" element={<App />} />
         </Routes>
       </ThemeProvider>
     </Router>
