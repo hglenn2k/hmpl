@@ -24,4 +24,34 @@ export const LyricsPlaceholder = styled.div`
     color: transparent; // Hide the actual text
     user-select: none; // Prevent users from selecting and revealing the text
   }
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 4px;
+  }
+
+  input.correctGuess {
+    border-color: green;
+  }
+
+  input.wrongGuess {
+    border-color: red;
+  }
+
+  input.freebie {
+    border-color: gold;
+  }
+
+  span.successfulGuess {
+    color: green;
+  }
+
+  span.failedGuess {
+    color: red;
+  }
+
+  span.freebie {
+    color: gold;
+  }
 `;

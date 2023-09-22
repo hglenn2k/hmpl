@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { GuessType } from "../../types/guess";
 import { Verse, RedactleSong } from "../../types/song";
 
 import { Button, Guess, Result, Search } from "..";
+
+import { Word } from "../../types/word";
+import { transformToWords, checkGuesses } from "../../helpers/redactSong";
 
 import * as Styled from "./index.styled";
 
@@ -28,6 +31,38 @@ export function Redactle({
   skip,
   guess,
 }: Props) {
+  const wordsArrayInit = todaysSolution[0]?.verse
+    ? transformToWords(todaysSolution[0].verse)
+    : [];
+
+  const [wordsArray, setWordsArray] = useState<Word[]>(wordsArrayInit);
+  const [userGuesses, setUserGuesses] = useState<string[]>(
+    new Array(wordsArray.length).fill("")
+  );
+
+  function handleInputChange(
+    event: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) {
+    const updatedGuesses = [...userGuesses];
+    updatedGuesses[index] = event.target.value;
+    setUserGuesses(updatedGuesses);
+
+    if (
+      event.target.value === "" &&
+      wordsArray[index].currentState === "failedGuess"
+    ) {
+      const updatedWords = [...wordsArray];
+      updatedWords[index].currentState = "noGuess";
+      setWordsArray(updatedWords);
+    }
+  }
+
+  function handleCheckGuesses() {
+    const updatedWords = checkGuesses(wordsArray, userGuesses);
+    setWordsArray(updatedWords);
+  }
+
   if (didGuess || currentTry === 5) {
     return (
       <Result
@@ -42,13 +77,48 @@ export function Redactle({
   return (
     <>
       <Styled.LyricsPlaceholder>
-        {todaysSolution[0]?.verse &&
-          todaysSolution[0].verse.split("\n").map((line, index) => (
-            <React.Fragment key={index}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
+        {wordsArray.map((word, index) => {
+          const nextElement = wordsArray[index + 1];
+
+          // Determine if a space should be added after the current element
+          const addSpace = nextElement && !/[.,;?!]/.test(nextElement.text);
+
+          switch (word.currentState) {
+            case "newLine":
+              return <br key={index} />;
+            case "noGuess":
+              return (
+                <input
+                  key={index}
+                  className={"noGuess"}
+                  placeholder={word.text.length.toString()}
+                  value={userGuesses[index] || ""}
+                  onChange={(e) => handleInputChange(e, index)}
+                  style={{ width: `${word.text.length * 8}px` }}
+                />
+              );
+            case "successfulGuess":
+              return (
+                <span key={index} className="successfulGuess">
+                  {word.text}
+                </span>
+              );
+            case "failedGuess":
+              return (
+                <input
+                  key={index}
+                  className={"wrongGuess"}
+                  placeholder={word.text.length.toString()}
+                  value={userGuesses[index] || ""}
+                  onChange={(e) => handleInputChange(e, index)}
+                  style={{ width: `${word.text.length * 8}px` }}
+                />
+              );
+            // Add other cases like "freebie" here when needed
+            default:
+              return <span key={index}>{word.text}</span>;
+          }
+        })}
       </Styled.LyricsPlaceholder>
 
       <Search<RedactleSong>
@@ -58,7 +128,7 @@ export function Redactle({
       />
 
       <Styled.Buttons>
-        <Button onClick={skip}>Guess Lyrics</Button>
+        <Button onClick={handleCheckGuesses}>Guess Lyrics</Button>
         <Button variant="green" onClick={guess}>
           Guess Song
         </Button>
