@@ -42,7 +42,7 @@ function RedactleApp() {
     if (Array.isArray(stats)) {
       const visitedToday = _.isEqual(
         currentSolution[0].verse,
-        stats[stats.length - 1].solution
+        stats[stats.length - 1].solution,
       );
 
       if (!visitedToday) {

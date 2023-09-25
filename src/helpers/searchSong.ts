@@ -4,7 +4,7 @@ import { RedactleSong, Song } from "../types/song";
 
 export function searchSong(
   searchTerm: string,
-  source: "songs" | "verses" = "songs"
+  source: "songs" | "verses" = "songs",
 ): (Song | RedactleSong)[] {
   searchTerm = searchTerm.toLowerCase();
 
@@ -18,7 +18,7 @@ export function searchSong(
       return artist.includes(searchTerm) || name.includes(searchTerm);
     })
     .sort((a, b) =>
-      a.artist.toLowerCase().localeCompare(b.artist.toLowerCase())
+      a.artist.toLowerCase().localeCompare(b.artist.toLowerCase()),
     )
     .slice(0, 5);
 }

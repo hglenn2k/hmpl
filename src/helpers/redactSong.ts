@@ -45,7 +45,7 @@ export function transformToWords(lyrics: string): Word[] {
 
 export function checkGuesses(
   originalWords: Word[],
-  userGuesses: string[]
+  userGuesses: string[],
 ): Word[] {
   return originalWords.map((word, index) => {
     if (

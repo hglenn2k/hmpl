@@ -43,12 +43,12 @@ export function Redactle({
 
   const [wordsArray, setWordsArray] = useState<Word[]>(wordsArrayInit);
   const [userGuesses, setUserGuesses] = useState<string[]>(
-    new Array(wordsArray.length).fill("")
+    new Array(wordsArray.length).fill(""),
   );
 
   function handleInputChange(
     event: React.ChangeEvent<HTMLInputElement>,
-    index: number
+    index: number,
   ) {
     const updatedGuesses = [...userGuesses];
     updatedGuesses[index] = event.target.value;

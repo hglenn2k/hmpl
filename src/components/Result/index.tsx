@@ -27,7 +27,7 @@ export function Result({
       new Date().getTime()) /
       1000 /
       60 /
-      60
+      60,
   );
 
   const textForTry = [

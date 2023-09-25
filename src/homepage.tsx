@@ -23,7 +23,7 @@ function Homepage() {
   } as GuessType;
 
   const [guesses, setGuesses] = React.useState<GuessType[]>(
-    Array.from({ length: 5 }).fill(initialGuess) as GuessType[]
+    Array.from({ length: 5 }).fill(initialGuess) as GuessType[],
   );
   const [currentTry, setCurrentTry] = React.useState<number>(0);
   const [selectedSong, setSelectedSong] = React.useState<Song>();
@@ -36,7 +36,7 @@ function Homepage() {
     if (Array.isArray(stats)) {
       const visitedToday = _.isEqual(
         todaysSolution,
-        stats[stats.length - 1].solution
+        stats[stats.length - 1].solution,
       );
 
       if (!visitedToday) {

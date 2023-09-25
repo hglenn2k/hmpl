@@ -12,9 +12,7 @@ export function HomeHeader({ openInfoPopUp }: Props) {
   return (
     <Styled.Container>
       <img src="/chrome.jpg" className="background-video"></img>
-      <Styled.Content>
-        <Styled.Logo>HMPL.ME</Styled.Logo>
-      </Styled.Content>
+      <Styled.Logo>HMPL.ME</Styled.Logo>
     </Styled.Container>
   );
 }
