@@ -11,25 +11,9 @@ interface Props {
 export function HomeHeader({ openInfoPopUp }: Props) {
   return (
     <Styled.Container>
-      <video
-        src="/chrome.mp4"
-        muted
-        autoPlay
-        loop
-        className="background-video"
-      ></video>
+      <img src="/chrome.jpg" className="background-video"></img>
       <Styled.Content>
-        <IoInformationCircleOutline
-          onClick={openInfoPopUp}
-          size={30}
-          width={30}
-          height={30}
-          color={"#83d350"}
-        />
-
-        <Styled.Logo>HMPL.ECO</Styled.Logo>
-
-        <a href="#"></a>
+        <Styled.Logo>HMPL.ME</Styled.Logo>
       </Styled.Content>
     </Styled.Container>
   );

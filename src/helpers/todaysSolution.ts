@@ -5,4 +5,4 @@ const now = Date.now();
 const msInDay = 86400000;
 const index = Math.floor((now - epochMs) / msInDay);
 
-export const todaysSolution = songs[(index % songs.length) + 8];
+export const todaysSolution = songs[index % songs.length];

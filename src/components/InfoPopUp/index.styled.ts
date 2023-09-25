@@ -39,6 +39,7 @@ export const PopUp = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
 
   border-radius: 10px;
+  background-color: rgba(0, 0, 25, 1);
 
   display: flex;
   flex-direction: column;

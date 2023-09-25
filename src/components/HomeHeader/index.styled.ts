@@ -34,11 +34,6 @@ export const Content = styled.div`
     0
   ); // This is an example with a white semi-transparent background
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  justify-content: space-between;
-
   width: 45%;
 
   @media (max-width: 768px) {

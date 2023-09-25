@@ -11,13 +11,8 @@ interface Props {
 export function ReHeader({ openInfoPopUp }: Props) {
   return (
     <Styled.Container>
-      <video
-        src="/chrome.mp4"
-        muted
-        autoPlay
-        loop
-        className="background-video"
-      ></video>
+      <img src="/chrome.jpg" className="background-video"></img>
+
       <Styled.Content>
         <IoInformationCircleOutline
           onClick={openInfoPopUp}

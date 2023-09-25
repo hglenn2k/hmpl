@@ -10,7 +10,6 @@ export function RedactleInfoPopUp({ onClose }: Props) {
   return (
     <Styled.Container>
       <Styled.PopUp>
-        <Styled.VideoBackground autoPlay muted loop src="/chrome.mp4" />
         <h1>Welcome 🩸</h1>
         <Styled.Spacer />
         <Styled.Section>
