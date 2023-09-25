@@ -9,8 +9,7 @@ export interface Verse {
   verse: string;
 }
 
-export interface Song extends BaseSong {
-}
+export interface Song extends BaseSong {}
 
 export interface RedactleSong extends BaseSong {
   album: string;

@@ -147,7 +147,7 @@ function Homepage() {
   return (
     <main>
       <HomeHeader openInfoPopUp={openInfoPopUp} />
-      {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
+
       <Styled.Container>
         <br />
         <br />

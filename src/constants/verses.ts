@@ -667,4 +667,75 @@ export const verses = [
       },
     ],
   },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Vices",
+    youtubeId: "nvWY9dpwxdI",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Well it's that ammo-dodgin
+      In all camouflage and I'm just flodgin
+      Loafin
+      Smokin
+      Chokin potent in my coffin
+      Loking
+      Toking up
+      I'm coughing
+      Broken
+      Hoping that I'm overdosing
+      Toting Glocks but never poking soaking thots
+      I'm sure you not the bitch I said you was
+      But you still a pussy boy
+      Yusa boy
+      Yusa pussy boy
+      Shout out JGRXXN and them schema boys
+      $uicideboy$ for life
+      *59 and Hustle Family tight
+      Fuck a copyright I'll let you bite as much as you want
+      Light the blunt
+      Fahrenheit I stunt
+      Fucking stuffing bodies in the trunk and then I fucking grunt
+      You saying Oddy front because I fucked your bitch you punk`,
+      },
+      {
+        performer: "$crim",
+        verse: `Swangin' in that '64
+      Ridin' with a dead ho
+      Bitch I'm from that murder block
+      Don't give a fuck bout gettin' caught
+      It's time to meet yo maker
+      Undertaker of the murder clan
+      Don't fuck with mark ass bitches
+      Send them off up in a ambulance
+      $chema boys and $uicide
+      Cock it back it's do or die
+      Time to make some momma's cry
+      I fantasize bout homicide
+      Creepin' in the cemetery
+      Knuckin' buckin' with tha Cherry
+      Pussy boys don't fuck with fairies
+      Blood all on me like I'm Carrie
+      Red rum, red rum
+      Chop his body put him in the bag
+      Murder, murder
+      Every time that '45 blast
+      Lame ass bitches, I'm the devil's bastard
+      (When I catch ya mark ass slipping) I'ma blast ya`,
+      },
+      {
+        performer: "JGRXXN",
+        verse: `See that say nigga say he hard but I don't believe him
+      He so full of bulk, I ain't ever seen him
+      See it's JGRXXN with them $uicideboy$
+      And we in that hoop ride
+      We bendin corners mane
+      Bout to make a stang
+      When you see the black rain you gon' feel the pain
+      See you's a pussy boy I took your pussy boy
+      She suckin on my dick while I press record`,
+      },
+    ],
+  },
 ];
