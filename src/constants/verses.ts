@@ -974,7 +974,8 @@ export const verses = [
         Just move back, ho`,
       },
     ],
-  },{
+  },
+  {
     artist: "$uicideboy$",
     album: "7th or St. Tammany",
     name: "I'll Pay for It (If I Want It)",
@@ -1030,7 +1031,8 @@ export const verses = [
         I don't fuck with none of you`,
       },
     ],
-  },{
+  },
+  {
     artist: "$uicideboy$",
     album: "7th or St. Tammany",
     name: "That's Very Minimalist of You",
@@ -1068,7 +1070,8 @@ export const verses = [
         Codeine always poured when I'm in the 7th Ward`,
       },
     ],
-  },{
+  },
+  {
     artist: "$uicideboy$",
     album: "7th or St. Tammany",
     name: "Romulus",
@@ -1116,7 +1119,8 @@ export const verses = [
         `,
       },
     ],
-  },{
+  },
+  {
     artist: "$uicideboy$",
     album: "7th or St. Tammany",
     name: "Straw Chairs",
