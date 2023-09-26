@@ -670,6 +670,202 @@ export const verses = [
   {
     artist: "$uicideboy$",
     album: "7th or St. Tammany",
+    name: "40 Oz. & Sober",
+    youtubeId: "agbiZUl3idA",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Bitch I be the snow mane
+        59 shades of grey but still I fucking glow mane
+        No chain but fucking shining cause the diamond is my birthstone mane
+        Went to the store with no change then I left the store with no change
+        Blew a bag of dope mane
+        Then blew a bag of cocaine
+        Looking like the crow mane
+        Kicking it with Brandon
+        No blood
+        Ice cold veins
+        Scarecrow make the escrow gain
+        Pimp a bitch
+        Got a hoe froze in and old black mustang
+        Fuck a hoe
+        I ain't got no rang
+        Phone rang phone rang rang
+        Leave me the fuck alone mane`,
+      },
+      {
+        performer: "$crim",
+        verse: `Yesterday I rode my bike to the moon
+        Or thought I did cause I was tripping on some shrooms
+        Smoking PCP
+        Scrimmy gone mentally
+        Penitentiary
+        Meth lab chemistry
+        Heisenberg of the burbs
+        Talking slurred to the birds
+        Kicking hoes to the curb
+        Yung Christ here to save the world
+        Crucify me only upside down with rotten nails
+        Moving like a snail
+        Drinking lean with ginger ale
+        Police on my tail
+        Couple goonies in the jail
+        Its living hell when you chilling living well
+        Rather roll over 6 feet in the dirt
+        Just bury me with a bitch that know how to squirt, hoe`,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Drugs/Hoes/Money/Etc.",
+    youtubeId: "ElKAextmUoo",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Counting sheep until I'm sound sleep
+        I'm lounging deep in a grave I found
+        Without a sound or peep, I lay in the ground
+        6 feet
+        Slick as sleet
+        Sneaking a beat
+        Let the breath leak out my mouth
+        Bitch, I want your skull
+        Fuck what's under your skirt
+        You broke my heart and now Ima ima make you hurt
+        Stomp you on the curb and then I'll throw you in the dirt
+        Give you back to the Earth
+        Girl you were something special
+        Yeah you were my fucking first
+        You want to cuddle?
+        We can cuddle in the back of the fucking hearse`,
+      },
+      {
+        performer: "$crim",
+        verse: `I don't need your sympathy
+        Make them bitches sing for me
+        Caught up in reality, smoking on some fantasy
+        Put the gun against my head
+        Pull the trigger now I'm dead
+        Bitches wanna count my bread
+        Only let them give me head
+        Sleeping in a tulip bed
+        Smoking green and seeing red
+        Loading up the clip with lead
+        Trigger finger soft as thread
+        No jewels, no chains, I like it that way
+        Don't know what I'm up to until that Glock in your face
+        I pop that bitch and I spray
+        Got these hoes on delay
+        All it take is one word they do whatever I say`,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "St. Bernard",
+    youtubeId: "FH8hKmS2tjw",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Riding with the crosses flipped
+        Demons smoke my weed and start to cough and shit
+        Diamonds on my claws no I ain't pausing shit
+        Black shade need a black flame
+        Back from the black plague
+        Ash tray made out of black suede
+        Get the fuck back
+        Back away
+        Slash and dash then its back to the cave
+        Ashin' cash then I pack up the grave
+        Black lipstick left a smack on the face
+        Rags to riches give a fuck about the fame`,
+      },
+      {
+        performer: "$crim",
+        verse: `It's that Scarecrow shawty creeping underneath your bed
+        Narcotics in my body, all I see is blood red
+        That skitzo serial killer
+        That hand gun under your pillow
+        Miserable drug dealer
+        Or that Codeine laced 'rilla
+        Triple 6 degrees
+        Hangin' from a tree
+        Smoking gasoline
+        It's that $uicidal king
+        I done fucked that bitch you with
+        I done sliced both of my wrist
+        Emptying out the clip`,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Leave Your Things Behind",
+    youtubeId: "t7bBVSWkyC4",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Dig me up and out the ground
+        The Leopard spotted grave was found
+        $loth tossed the moss
+        Cross upside down
+        Wipe the dirt
+        Off of my face
+        In reverse
+        Fuck disgrace
+        I've been unlaced
+        Stitch me up
+        I'm not opaque
+        Please don't excavate
+        Intoxicated, Rotten
+        My forgotten trait
+        Take me to the coast and toss my body in the lake
+        Watch me float away to my remote dismay`,
+      },
+      {
+        performer: "$crim",
+        verse: `Leaving your things behind
+        Me, I done lost my mind
+        Think of you all the time
+        Shawty just please be mine
+        When I see you I just wanna die
+        If I could there'd be tears in my eyes
+        But a dead motherfucker can't cry
+        Only rise up when I'm high
+        Spilling my guts on this pavement
+        Purple is always my fragrance
+        That codeine is always my favorite
+        But for you there just ain't no replacement
+        Only place I reside is Opiate Street
+        I believe I can fly when them Xan's up in me
+        I believe when I die it'll be from an OD
+        All these bitches cuisines and I'm eating for free`,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "",
+    youtubeId: "",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: ``,
+      },
+      {
+        performer: "$crim",
+        verse: ``,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
     name: "Vices",
     youtubeId: "nvWY9dpwxdI",
     verses: [
@@ -735,6 +931,223 @@ export const verses = [
       When you see the black rain you gon' feel the pain
       See you's a pussy boy I took your pussy boy
       She suckin on my dick while I press record`,
+      },
+    ],
+  },
+  {
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Dead Batteries",
+    youtubeId: "QLI4PrdVHoc",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Here I come to paint it grey
+        Whip look like I drive a pile of ashes
+        Light the blunt and fucking fade away
+        Took a minute to get it lit and then even more to get it finished
+        Sipping Gatorade and Tanqueray
+        I rake the blade and blame the flame
+        I save the fame for later dames
+        The gator chained up in the lake
+        Up early fucking gaining brain
+        I train the pain by draining cake
+        I aim to reign my brain is stained
+        I say the same I never change
+        Don't pop Champagne I'm a-okay
+        I stay away from flashing lights
+        I paved my way straight to the bank`,
+      },
+      {
+        performer: "$crim",
+        verse: `Bitches know I got the vendetta
+        Rollin' up the lettuce
+        $uicidal penned letters
+        Gone and roll the credits
+        Swervin' in a Chevy, ready to land them hollow points
+        I'm coming for that fetti, fetti
+        I hate to disappoint
+        Just lace me down in grey and black
+        Loc'ed out, ridin' in my grandmaw's Cadillac
+        Poppin' roxies, got 100 in my back pack
+        Full moon, so my eyes lookin' jet black
+        Just move back, ho`,
+      },
+    ],
+  },{
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "I'll Pay for It (If I Want It)",
+    youtubeId: "_uyqKQmHu9I",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Fucking Ruby got a blunt with a flame at the tip
+        Got a brain with a slit
+        Got to get it zipped before I feel the pain of the split
+        No that ain't a dame, that's a bitch
+        Put the blame on the dick
+        Walking with a lame leg limp
+        Put my name on a blimp
+        Eating steak couple shrimp
+        I'm an ape
+        I'm a chimp
+        AK banana clip
+        Make a pimp pay me for his bitch and then I slit her wrists
+        All day same shit
+        Spray mist
+        Gang grey
+        Dead fake boys floating in the lake
+        Now I'm lake got to dip
+        Take a piss
+        Purple motherfucking stain
+        Sipping gasoline on a plane
+        Matching me I'm a flame
+        Blowing up
+        Glowing up
+        Fuck what you motherfucking claim bitch`,
+      },
+      {
+        performer: "$crim",
+        verse: `Big bank take lil' bank
+        It's the colonel of the fuckin tank
+        Smoke til my mind go blank
+        Drop a couple pills in my drink
+        Fuck you mean
+        Got the sprite with the codeine
+        Half dead but I look clean
+        Motherfuckers know the routine
+        When I'm creepin up in they scene
+        Quarantine all the hoes hide all the dope
+        Young $carecrow grippin on the calico
+        Let 'em know I ain't nobody to be fucked with
+        $licky on that fuck shit
+        Run quick mothafucka know I bust quick
+        Yung Chri$t mothafucka know I run shit
+        Fuck the hoes
+        Fuck you
+        Fuck the money too
+        I don't fuck with none of you`,
+      },
+    ],
+  },{
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "That's Very Minimalist of You",
+    youtubeId: "W7tyesINne0",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Ruby casting shadows
+        Looting fucking castles
+        Ruby got the bad hoes shaking like a graduating tassel
+        Uzi make it rattle
+        Gucci print I fucking dabble
+        All these bitches fucking battle
+        Bitch I'm fucking sunk at the bottom of a bottle
+        My problems too many blunts so Ruby facing problems
+        Suicidal idol rolling blunts out of broken bibles
+        Pussy boy I popped him with the rifle
+        Grey the fucking title`,
+      },
+      {
+        performer: "$crim",
+        verse: `Ridin' shotty with my shotty
+        Smokin' next to Oddy
+        Caught a body in the lobby
+        Then I emptied out my tommy
+        I'm that grimey mother fucker with them sluggas in my luggage
+        Wavy like the ocean, sad emotions, get the notion?
+        Grey my territory
+        Hoes know bout my story
+        Scum my category
+        Fuck these hoes while in my glory
+        Sippin' on that purple, thanks to drugs I feel immortal
+        Jumpin' in and out of portals, looking like I'm Andy Warhol
+        Gaudy pack Lord, with three hoes up in my Ford
+        Codeine always poured when I'm in the 7th Ward`,
+      },
+    ],
+  },{
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Romulus",
+    youtubeId: "vQ5e5-muo48",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Bitches telling me that I got pretty eyes
+        But when that crescent turn into a full moon they roll in the back of my head
+        It ain't a pretty sight
+        59 shots in my twisty spine
+        2 screws in my fucking ankle
+        I'd rather that than 2 nails in my fucking wrist
+        I be that filthy Christ with a crown of barbed wire
+        Feeling tipsy off some sticky sprite
+        Roll the blunt
+        I'm lighting up some misty pine
+        Grey is the color of my fucking skin
+        I ain't a white boy bitch
+        Dead is what I been
+        Wearing gold only cause I got to pay the reaper
+        I be the 7th Ward Dragon
+        Fucking fire breather`,
+      },
+      {
+        performer: "$crim",
+        verse: `Grey Five Nine
+        Grey Five Nine
+        Grey Five Nine
+        Grey Five Nine
+        
+        I be that droopy mother fucker in a all black hoodie
+        Call up Ruby with the all black uzi
+        Smokin' on fruity, while I'm fuckin' with a groupie
+        Grabbin' on her booty, call me Yung Hank Moody
+        Got the red in my eyes
+        Call me Yung October
+        People say my eyes low but I'm just tryna get them lower
+        All day smoker with a hate for being sober
+        Kyle Korver with the 3's, throw 'em up and get slumped
+        Black bitch sitting shotty, white girl in the trunk
+        Lil' weird mother fucker with some gold on my gums
+        Knuckin' and buckin', bitch, it's Grey 59
+        I'm flippin' and whippin' and dealin' for them dollar signs
+        `,
+      },
+    ],
+  },{
+    artist: "$uicideboy$",
+    album: "7th or St. Tammany",
+    name: "Straw Chairs",
+    youtubeId: "hhhEt3S2nGQ",
+    verses: [
+      {
+        performer: "Ruby da Cherry",
+        verse: `Shawty want to fuck
+        Told her bitch you out of luck
+        Came only to smoke
+        No this ain't no joke I don't fuck bitches I don't know I trust
+        Got a dozen blunts of dust and bitch I'm about to burn
+        No it ain't your turn
+        Blunts to my face
+        Solo blowing smoke rings
+        Choking
+        I'm a dope fiend
+        Smoking til my death I'm hoping
+        Put me in my coffin cause I'm coughing up my lungs`,
+      },
+      {
+        performer: "$crim",
+        verse: `Bitches keep on callin' but I ain't got no service
+        Paypal me that cash if you looking for verses
+        Always on narcotics even when I say I stopped it
+        Walking with a limp, looking like I got arthritis
+        Twenty cigarettes, in my mother fucking car
+        Ridin' round town, I just popped a half a bar
+        Ridin' with your bitch as she bust down the cigar
+        Yea, I'm ridin' with your bitch and she bust down the cigar
+        I'm sayin...`,
       },
     ],
   },
