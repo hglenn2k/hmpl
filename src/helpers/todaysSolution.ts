@@ -1,8 +1,10 @@
 import { songs } from "../constants";
 
-const epochMs = new Date(2022, 2, 21).valueOf();
+// Use 1 for February instead of 2.
+const epochMs = new Date(2022, 1, 21).valueOf();
 const now = Date.now();
 const msInDay = 86400000;
 const index = Math.floor((now - epochMs) / msInDay);
 
-export const todaysSolution = songs[index % songs.length];
+// Use Math.abs to ensure the index is non-negative.
+export const todaysSolution = songs[Math.abs(index) % songs.length];

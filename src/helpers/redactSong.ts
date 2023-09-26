@@ -10,6 +10,8 @@ export function transformToWords(lyrics: string): Word[] {
   const regex = /(\n|[a-zA-Z]+(?='s)|'s|[\w.]+|\s+|[.,;?!](?!\w))/g;
   const matches = lyrics.match(regex) || [];
 
+  let isEven = false; // add this line
+
   return matches.map((wordOrDelimiter) => {
     if (wordOrDelimiter === "\n") {
       return {
@@ -35,6 +37,20 @@ export function transformToWords(lyrics: string): Word[] {
         currentState: "notRedacted",
       };
     } else {
+      // Check if the word has 4 characters
+      if (wordOrDelimiter.length === 4) {
+        // Toggle isEven
+        isEven = !isEven;
+
+        // Only redact if isEven is true
+        return {
+          text: wordOrDelimiter,
+          currentState: isEven
+            ? redactionAlgorithm(wordOrDelimiter)
+            : "notRedacted",
+        };
+      }
+
       return {
         text: wordOrDelimiter,
         currentState: redactionAlgorithm(wordOrDelimiter),
