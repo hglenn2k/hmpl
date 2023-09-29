@@ -158,6 +158,8 @@ function App() {
         />
       </Styled.Container>
       <Footer />
+      <br />
+      <br />
     </main>
   );
 }

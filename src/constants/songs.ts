@@ -136,22 +136,67 @@ export const songs = [
   },
   {
     artist: "Beyoncé",
-    name: "",
-    youtubeId: "",
+    name: "Naughty Girl",
+    youtubeId: "N5n5nbMhjxA",
   },
   {
     artist: "Beyoncé",
-    name: "",
-    youtubeId: "",
+    name: "Baby Boy (feat. Sean Paul)",
+    youtubeId: "eQ2cOmJya6w",
   },
   {
     artist: "Beyoncé",
-    name: "",
-    youtubeId: "",
+    name: "Hip Hop Star (feat. Big Boi & Sleepy Brown)",
+    youtubeId: "TAGVTVzzpC4",
   },
   {
     artist: "Beyoncé",
-    name: "",
-    youtubeId: "",
+    name: "Be With You",
+    youtubeId: "3MRExEWSpfc",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Me, Myself and I",
+    youtubeId: "T-sslssCgjY",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Yes",
+    youtubeId: "AQrEy_mTFNk",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Signs (feat. Missy Elliott)",
+    youtubeId: "rCSjHVobrjQ",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Speechless",
+    youtubeId: "MaZjE3R7W-c",
+  },
+  {
+    artist: "Beyoncé",
+    name: "That's How You Like It (feat. Jay-Z)",
+    youtubeId: "2k69VPyiLmA",
+  },
+  {
+    artist: "Beyoncé",
+    name: "The Closer I Get To You",
+    youtubeId: "CLM1FzGQ9cU",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Dangerously In Love",
+    youtubeId: "4Xemq4xCSEA",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Gift from Virgo",
+    youtubeId: "y4ewFoDWOwc",
+  },
+  {
+    artist: "Beyoncé",
+    name: "Daddy",
+    youtubeId: "0VyY_sXW6zk",
   },
 ];
