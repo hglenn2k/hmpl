@@ -275,7 +275,7 @@ export const verses = [
         verse: `All of these bitches afraid of me
                 And all of these fuckboys - they hate on me
                 So just to sum it up
-                Basically, I really couldn't give less of a fuck
+                Basically, I really couldnt give less of a fuck
                 I'm from the era of terror
                 The product of financial pressure
                 Social conformity
@@ -1524,7 +1524,7 @@ export const verses = [
   {
     artist: "$uicideboy$",
     album: "Dark Side of the Clouds",
-    name: "Aite, Bet.",
+    name: "Aite Bet",
     youtubeId: "ufWw_jTPrVM",
     verses: [
       {
@@ -1589,10 +1589,10 @@ export const verses = [
       {
         performer: "$crim",
         verse: `I'm sinking to unknown levels, the devil with no brake pedal
-        Stop all this murder, mo' murder, drugs got me cockin' the burner
+        Stop all this murder, mo murder, drugs got me cocking the burner
         Run up in your house, duct tape on your mouth
         Evil shit, hittin' licks, never a drought
-        $uicide Grey*59, future is now
+        Suicide Grey 59, future is now
         Lucifer in the flesh, you'd hear the sound
         $ui, $ui-cide, $uicide!
         Poppin' these pills, and I'm poppin' these shells
